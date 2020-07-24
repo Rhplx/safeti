@@ -1,0 +1,37 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  .contenedorEnlaces {
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin: 0 20px;
+      }
+    }
+  }
+  .contenedorMovil {
+    display: none;
+    button {
+      border: 0;
+      background-color: transparent;
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 950px) {
+  nav {
+    .contenedorEnlaces {
+      display: none;
+    }
+    .contenedorMovil {
+      display: block;
+    }
+  }
+}
