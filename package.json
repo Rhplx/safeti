@@ -9,9 +9,11 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-id-swiper": "^4.0.0",
     "react-jump": "0.0.9",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "swiper": "^6.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

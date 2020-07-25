@@ -3,6 +3,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  padding: 10px 30px;
 
   .contenedorEnlaces {
     ul {
@@ -15,6 +16,7 @@ nav {
     }
   }
   .contenedorMovil {
+    position: relative;
     display: none;
     button {
       border: 0;
@@ -23,8 +25,24 @@ nav {
         width: 20px;
       }
     }
+    ul {
+      display: none;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.61);
+      top: 0;
+      right: 0;
+      position: absolute;
+      list-style: none;
+      min-width: 140px;
+      li {
+        text-align: right;
+        display: block;
+        margin: 10px 0;
+      }
+    }
   }
 }
+
 @media only screen and (max-width: 950px) {
   nav {
     .contenedorEnlaces {

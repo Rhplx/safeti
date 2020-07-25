@@ -1,0 +1,186 @@
+// Primera seccion CARRUSEL
+.contenedorCarrusel {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-gap: 30px;
+
+  .textoCarrusel {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    h1 {
+      font-size: 48px;
+    }
+    button {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background-color: #65a2ea;
+      border: 0;
+      border-radius: 8px;
+      padding: 5px 10px;
+    }
+  }
+  .imagenCarrusel {
+    img {
+      width: 100%;
+    }
+  }
+}
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 80px auto;
+  text-align: center;
+
+  article {
+    padding: 30px;
+    p {
+      text-align: left;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+  }
+}
+.servicios {
+  background-color: rgba(121, 222, 167, 0.15);
+  text-align: center;
+  padding: 100px 0;
+  h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .tipos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+    width: 60%;
+    margin-top: 80px;
+    align-items: start;
+    article {
+      font-size: 20px;
+      padding: 30px 50px;
+      text-align: left;
+      background-color: #fff;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      p {
+        color: black;
+      }
+      button {
+        border: 0;
+        width: 80%;
+        margin: 30px auto;
+        padding: 5px;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+    .primerTipo {
+      color: #ff8671;
+      button {
+        background-color: #ff8671;
+      }
+    }
+    .segundoTipo {
+      color: #79dea7;
+      button {
+        background-color: #79dea7;
+      }
+    }
+    .tercerTipo {
+      color: #65a2ea;
+      button {
+        background-color: #65a2ea;
+      }
+    }
+  }
+}
+.funcionamiento {
+  text-align: center;
+  margin-top: 80px;
+  h1 {
+    font-size: 48px;
+  }
+  .pasos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 70px;
+    width: 90%;
+    margin: 80px auto;
+    article {
+      font-size: 20px;
+      img {
+        margin: 20px 0;
+      }
+      h3 {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+.contacto {
+  background-color: rgba(121, 222, 167, 0.15);
+  padding: 100px 0;
+  .contactanos {
+    display: grid;
+    padding-top: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    width: 50%;
+    margin: auto;
+    .datos {
+      h1,
+      p {
+        font-size: 48px;
+        margin: 20px 0;
+      }
+    }
+    .formulario {
+      form {
+        input,
+        textarea {
+          width: 100%;
+          padding: 20px;
+          border-radius: 8px;
+          background-color: #fff;
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+          border: 0;
+          margin: 10px 0;
+          font-size: 20px;
+        }
+        textarea {
+          height: 200px;
+        }
+        .botonEnviar {
+          text-align: right;
+          button {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #65a2ea;
+            border: 0;
+            border-radius: 8px;
+            padding: 5px 10px;
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  padding: 30px;
+  text-align: center;
+  h5 {
+    font-size: 20px;
+  }
+}
