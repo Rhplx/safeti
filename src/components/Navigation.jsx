@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Logo from "../assets/images/safetilogo.png";
 import "../styles/Navigation.scss";
 import Menu from "../assets/images/menu.png";
+import { Jump } from "react-jump";
 
 export default class Navigation extends Component {
   showMenu = () => {
@@ -20,11 +21,17 @@ export default class Navigation extends Component {
           <img src={Logo} alt="" />
           <div className="contenedorEnlaces">
             <ul>
-              <li>Servicios</li>
-              <li>Como funciona</li>
+              <li>
+                <Jump target={".servicios"}> Servicios</Jump>
+              </li>
+              <li>
+                <Jump target={".funcionamiento"}>Como funciona</Jump>
+              </li>
               <li>Nosotros</li>
               <li>
-                <strong> Contacto</strong>
+                <Jump target={".contacto"}>
+                  <strong> Contacto</strong>
+                </Jump>
               </li>
             </ul>
           </div>
@@ -33,10 +40,18 @@ export default class Navigation extends Component {
               <img src={Menu} alt="Menu" />
             </button>
             <ul id="menuMovil">
-              <li>Servicios</li>
-              <li>Como funciona</li>
+              <li>
+                <Jump target={".servicios"}> Servicios</Jump>
+              </li>
+              <li>
+                <Jump target={".funcionamiento"}>Como funciona</Jump>
+              </li>
               <li>Nosotros</li>
-              <li>Contacto</li>
+              <li>
+                <Jump target={".contacto"}>
+                  <strong> Contacto</strong>
+                </Jump>
+              </li>
             </ul>
           </div>
         </nav>

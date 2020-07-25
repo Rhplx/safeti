@@ -1,4 +1,7 @@
 // Primera seccion CARRUSEL
+.carrusel {
+  width: 95%;
+}
 .contenedorCarrusel {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -59,8 +62,8 @@
   .tipos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 100px;
-    width: 60%;
+    grid-gap: 30px;
+    width: 80%;
     margin-top: 80px;
     align-items: start;
     article {
@@ -135,7 +138,7 @@
     padding-top: 80px;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 50px;
-    width: 50%;
+    width: 80%;
     margin: auto;
     .datos {
       h1,
@@ -182,5 +185,65 @@ footer {
   text-align: center;
   h5 {
     font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1005px) {
+  .carrusel {
+    width: 100%;
+  }
+  .contenedorCarrusel {
+    grid-template-columns: 1fr;
+    .imagenCarrusel {
+      grid-row: 1;
+    }
+    .textoCarrusel {
+      align-items: center;
+      width: 80%;
+      margin: auto;
+      h1 {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .beneficios {
+    grid-template-columns: 1fr;
+    article {
+      p {
+        width: 50%;
+        margin: 30px auto;
+      }
+    }
+  }
+  .servicios {
+    .tipos {
+      grid-template-columns: 1fr;
+    }
+  }
+  .funcionamiento {
+    .pasos {
+      grid-template-columns: 1fr;
+    }
+  }
+  .contacto {
+    .contactanos {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+@media only screen and (max-width: 650px) {
+  .contenedorCarrusel .textoCarrusel h1,
+  .servicios h1,
+  .funcionamiento h1 {
+    font-size: 30px;
+  }
+  .contacto {
+    .contactanos {
+      .datos {
+        h1,
+        p {
+          font-size: 30px;
+        }
+      }
+    }
   }
 }
