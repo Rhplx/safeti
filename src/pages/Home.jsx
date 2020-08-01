@@ -9,6 +9,7 @@ import Carrusel4 from "../assets/images/carrusel4.png";
 import SwiperCore, { Autoplay } from "swiper";
 import Elipse from "../assets/images/Ellipse.png";
 import "../styles/Home.scss";
+import { Link } from "react-router-dom";
 
 export default class Home extends Component {
   render() {
@@ -96,7 +97,9 @@ export default class Home extends Component {
               <p>Antivirus</p>
               <p>SafeTi App</p>
               <h3>$168.37</h3>
-              <button>Contactános</button>
+              <button>
+                <Link to="/buy?1"> Contactános</Link>
+              </button>
             </article>
             <article className="segundoTipo">
               <h3>Safeti business</h3>
@@ -106,7 +109,9 @@ export default class Home extends Component {
               <p>Respaldo semanal</p>
               <p>SafeTi App</p>
               <h3>$194.88</h3>
-              <button>Contactános</button>
+              <button>
+                <Link to="/buy?2">Contactános</Link>
+              </button>
             </article>
             <article className="tercerTipo">
               <h3>Safeti Pro</h3>
@@ -121,7 +126,9 @@ export default class Home extends Component {
 
               <p>SafeTi App</p>
               <h3>$194.88</h3>
-              <button>Contactános</button>
+              <button>
+                <Link to="/buy?3">Contactános</Link>
+              </button>
             </article>
           </div>
         </section>
