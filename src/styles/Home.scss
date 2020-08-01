@@ -180,6 +180,45 @@
     }
   }
 }
+.pagos {
+  background-color: rgba(121, 222, 167, 0.15);
+
+  .formularioPago {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 0;
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      input {
+        margin: 10px 0;
+        display: block;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        width: 60%;
+        border: 0;
+      }
+    }
+    .datosPago {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      background-color: white;
+      width: 70%;
+      ul {
+        list-style: none;
+        padding: 10px 20px;
+        border-bottom: 1px solid black;
+        li {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
 footer {
   padding: 30px;
   text-align: center;
@@ -229,7 +268,18 @@ footer {
       grid-template-columns: 1fr;
     }
   }
+  .pagos {
+    .formularioPago {
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+    }
+    .datosPago {
+      margin: auto;
+      width: 60%;
+    }
+  }
 }
+
 @media only screen and (max-width: 650px) {
   .contenedorCarrusel .textoCarrusel h1,
   .servicios h1,
