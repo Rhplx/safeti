@@ -18,7 +18,7 @@ export default class Navigation extends Component {
     return (
       <>
         <nav className="contenedor">
-          <img src={Logo} alt="" />
+          <a href="/"> <img src={Logo} alt="" /> </a>
           <div className="contenedorEnlaces">
             <ul>
               <li>
