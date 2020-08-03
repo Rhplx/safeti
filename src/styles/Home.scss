@@ -1,6 +1,7 @@
 // Primera seccion CARRUSEL
 .carrusel {
   width: 95%;
+  padding-top: 50px;
 }
 .contenedorCarrusel {
   display: grid;
@@ -186,7 +187,7 @@
 }
 .pagos {
   background-color: rgba(121, 222, 167, 0.15);
-
+  padding-top: 50px;
   .formularioPago {
     display: grid;
     grid-template-columns: 1fr 1fr;

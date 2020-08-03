@@ -3,6 +3,7 @@ import Logo from "../assets/images/safetilogo.png";
 import "../styles/Navigation.scss";
 import Menu from "../assets/images/menu.png";
 import { Jump } from "react-jump";
+import { Link } from "react-router-dom";
 
 export default class Navigation extends Component {
   showMenu = () => {
@@ -17,42 +18,46 @@ export default class Navigation extends Component {
   render() {
     return (
       <>
-        <nav className="contenedor">
-          <a href="/"> <img src={Logo} alt="" /> </a>
-          <div className="contenedorEnlaces">
-            <ul>
-              <li>
-                <Jump target={".servicios"}> Servicios</Jump>
-              </li>
-              <li>
-                <Jump target={".funcionamiento"}>Como funciona</Jump>
-              </li>
-              <li>Nosotros</li>
-              <li>
-                <Jump target={".contacto"}>
-                  <strong> Contacto</strong>
-                </Jump>
-              </li>
-            </ul>
-          </div>
-          <div className="contenedorMovil">
-            <button onClick={(e) => this.showMenu()}>
-              <img src={Menu} alt="Menu" />
-            </button>
-            <ul id="menuMovil">
-              <li>
-                <Jump target={".servicios"}> Servicios</Jump>
-              </li>
-              <li>
-                <Jump target={".funcionamiento"}>Como funciona</Jump>
-              </li>
-              <li>Nosotros</li>
-              <li>
-                <Jump target={".contacto"}>
-                  <strong> Contacto</strong>
-                </Jump>
-              </li>
-            </ul>
+        <nav>
+          <div className="contenedorNav">
+            <Link to="/">
+              <img src={Logo} alt="" />
+            </Link>
+            <div className="contenedorEnlaces">
+              <ul>
+                <li>
+                  <Jump target={".servicios"}> Servicios</Jump>
+                </li>
+                <li>
+                  <Jump target={".funcionamiento"}>Como funciona</Jump>
+                </li>
+                <li>Nosotros</li>
+                <li>
+                  <Jump target={".contacto"}>
+                    <strong> Contacto</strong>
+                  </Jump>
+                </li>
+              </ul>
+            </div>
+            <div className="contenedorMovil">
+              <button onClick={(e) => this.showMenu()}>
+                <img src={Menu} alt="Menu" />
+              </button>
+              <ul id="menuMovil">
+                <li>
+                  <Jump target={".servicios"}> Servicios</Jump>
+                </li>
+                <li>
+                  <Jump target={".funcionamiento"}>Como funciona</Jump>
+                </li>
+                <li>Nosotros</li>
+                <li>
+                  <Jump target={".contacto"}>
+                    <strong> Contacto</strong>
+                  </Jump>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </>
