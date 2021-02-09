@@ -3,13 +3,20 @@ nav {
   width: 100%;
   z-index: 50;
   background-color: white;
+  .loginColor{
+    color: #65a2ea;
+  }
+  .socialColor{
+    color: #65a2ea;
+    margin: 0px -9px 0px -12px;
+  }
   .contenedorNav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding: 10px 30px;
-    max-width: 1250px;
+    padding: 10px 6px;
+    max-width: 1297px;
     margin: auto;
 
     .contenedorEnlaces {

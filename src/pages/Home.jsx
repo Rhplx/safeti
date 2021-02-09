@@ -8,10 +8,44 @@ import Carrusel3 from "../assets/images/carrusel3.png";
 import Carrusel4 from "../assets/images/carrusel4.png";
 import SwiperCore, { Autoplay } from "swiper";
 import Elipse from "../assets/images/Ellipse.png";
+import Elipse2 from "../assets/images/Ellipse2.png";
+import Elipse3 from "../assets/images/Ellipse3.png";
+import Elipse4 from "../assets/images/Ellipse4.png";
+import Elipse5 from "../assets/images/Ellipse5.png";
+import Elipse6 from "../assets/images/Ellipse6.png";
+import Elipse7 from "../assets/images/Ellipse7.png";
 import "../styles/Home.scss";
-import { Link } from "react-router-dom";
 
 export default class Home extends Component {
+
+
+  sendEmail = (e) => {
+    e.preventDefault();
+
+    let formData = new FormData();
+
+    formData.append("nombre", document.getElementById("nombre").value);
+    formData.append("correo", document.getElementById("correo").value);
+    formData.append("tel", document.getElementById("tel").value);
+    formData.append("dudas", document.getElementById("dudas").value);
+
+    
+    fetch("/api/mail.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.text())
+      .then((response) => {
+        if (response === "\n1"){
+          document.getElementById("botonEnviar").innerHTML = "<p>Gracias por tu mensaje<p>";
+        } else {
+          document.getElementById("contenedorEnviar").innerHTML = '<p>Hubo un problema, revisa los campos.</p>';
+        }
+      });
+  };
+
+
+
   render() {
     SwiperCore.use([Autoplay]);
 
@@ -19,7 +53,7 @@ export default class Home extends Component {
       spaceBetween: 30,
       centeredSlides: true,
       autoplay: {
-        delay: 2500,
+        delay: 8000,
         disableOnInteraction: false,
       },
     };
@@ -66,27 +100,27 @@ export default class Home extends Component {
             </div>
           </Swiper>
         </section>
-        <section className="contenedor beneficios">
+        <section className="contenedor beneficios" id="nosotros">
           <article>
             <img src={Elipse} alt="Elipse" />
             <p>Servicio de respaldo y mantenimiento en todo lugar</p>
           </article>
           <article>
-            <img src={Elipse} alt="Elipse" />
+            <img src={Elipse2} alt="Elipse" />
             <p>Resolvemos todos tus problemas en una sola plataforma</p>
           </article>
           <article>
-            <img src={Elipse} alt="Elipse" />
+            <img src={Elipse3} alt="Elipse" />
             <p>Constante inventario de tu equipo de manera remota</p>
           </article>
           <article>
-            <img src={Elipse} alt="Elipse" />
+            <img src={Elipse4} alt="Elipse" />
             <p>
               Soporte 24/7, obtén ayuda de un especialista no importa la hora
             </p>
           </article>
         </section>
-        <section className="servicios">
+        <section className="servicios" id="servicios">
           <h1>Conoce nuestros servicios.</h1>
           <p>Nuestros servicios empaquetados se adaptan a tus necesidades.</p>
           <div className="contenedor tipos">
@@ -98,7 +132,7 @@ export default class Home extends Component {
               <p>SafeTi App</p>
               <h3>$168.37</h3>
               <button>
-                <Link to="/buy?1"> Contactános</Link>
+                <a href="https://safeti.mx/buy?1">Contrátanos</a>
               </button>
             </article>
             <article className="segundoTipo">
@@ -110,7 +144,7 @@ export default class Home extends Component {
               <p>SafeTi App</p>
               <h3>$194.88</h3>
               <button>
-                <Link to="/buy?2">Contactános</Link>
+                <a href="https://safeti.mx/buy?2">Contrátanos</a>
               </button>
             </article>
             <article className="tercerTipo">
@@ -125,18 +159,18 @@ export default class Home extends Component {
               </p>
 
               <p>SafeTi App</p>
-              <h3>$194.88</h3>
+              <h3>$330.60</h3>
               <button>
-                <Link to="/buy?3">Contactános</Link>
+                <a href="https://safeti.mx/buy?3">Contrátanos</a>
               </button>
             </article>
           </div>
         </section>
-        <section className="contenedor funcionamiento">
+        <section className="contenedor funcionamiento" id="como">
           <h1>Cómo funciona</h1>
           <div className="pasos">
             <article>
-              <img src={Elipse} alt="Elipse" />
+              <img src={Elipse5} alt="Elipse" />
 
               <h3>Programa una llamada </h3>
               <p>
@@ -146,7 +180,7 @@ export default class Home extends Component {
               </p>
             </article>
             <article>
-              <img src={Elipse} alt="Elipse" />
+              <img src={Elipse6} alt="Elipse" />
 
               <h3>Contrata nuestro servicio</h3>
               <p>
@@ -155,7 +189,7 @@ export default class Home extends Component {
               </p>
             </article>
             <article>
-              <img src={Elipse} alt="Elipse" />
+              <img src={Elipse7} alt="Elipse" />
 
               <h3>Disfruta de los beneficios</h3>
               <p>
@@ -165,28 +199,30 @@ export default class Home extends Component {
             </article>
           </div>
         </section>
-        <section className="contacto">
+        <section className="contacto" id="contacto">
           <div className="contenedor contactanos">
             <div className="datos">
               <h1>Ponte en contacto con nosotros.</h1>
               <p>T.88 4657 234</p>
-              <p>C.be@safeti.com</p>
+              <p>C.be@safeti.mx</p>
             </div>
             <div className="formulario">
-              <form action="">
-                <input type="text" placeholder="Nombre" />
-                <input type="tel" placeholder="Teléfono" />
-                <input type="email" placeholder="Correo" />
-                <textarea placeholder="Escribe tu mensaje aqui"></textarea>
-                <div className="botonEnviar">
+              <form onSubmit={(e) => this.sendEmail(e)}>
+                <input id="nombre" type="text" placeholder="Nombre" />
+                <input id="tel" type="tel" placeholder="Teléfono" />
+                <input id="correo" type="email" placeholder="Correo" />
+                <textarea id="dudas" placeholder="Escribe tu mensaje aqui"></textarea>
+                <div className="botonEnviar" id="botonEnviar">
                   <button type="submit">Contáctanos</button>
+                  <span id="contenedorEnviar"></span>
                 </div>
+                <span id="contenedorEnviar"></span>
               </form>
             </div>
           </div>
         </section>
         <footer>
-          <h5>©Safeti 2020 – Aviso de privacidad</h5>
+          <h5>©Safeti 2020 – <a href="/aviso">Aviso de privacidad</a></h5>
         </footer>
       </>
     );
